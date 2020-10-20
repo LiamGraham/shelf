@@ -73,16 +73,6 @@ class Command:
         """
         text = text.strip()
         elements = text.split(" ")[self._prefix_len:]
-        start = end = 0
-        for i, x in enumerate(elements):
-            if x.startswith("\""):
-                start = i
-            if x.endswith("\""):
-                end = i
-                break
-        if start != end:
-            quoted = " ".join(elements[start:end+1])
-            elements = elements[:start] + [quoted]
          
         if not self.matches(text, elements):
             raise CommandError(f"\"{text}\" does not match \"{self._signature}\"")
