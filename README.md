@@ -27,6 +27,7 @@ Create a CommandParser and register each of your functions with a non-variable p
 ```python
 >>> parser = CommandParser()
 >>> parser.add_command("add", add)
+>>> rect = Rectangle(5, 10)
 >>> parser.add_command("rect set", rect.set_dimension)
 ```
 
@@ -35,7 +36,6 @@ Parse commands using the `parse()` method to receive the corresponding output.
 ```python
 >>> command.parse("add 1 2")
 3
->>> rect = Rectangle(5, 10)
 >>> command.parse("rect set 20 30")
 >>> rect.height
 20
