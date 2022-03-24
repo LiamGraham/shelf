@@ -42,11 +42,18 @@ Parse commands using the `parse()` method to receive the corresponding output.
 20
 ```
 
-Use `shelf()` to initiate a shell using a created CommandParser.
+Use `shelf()` to initiate a shell using a created CommandParser. `shelf()` provides a basic set of functionality, including an exit command and command suggestions.
 
 ```python
 >>> from shelf import shelf
 >>> shelf(parser)
 > add 1 2
 3
+> ad 3 4
+Unknown command: "ad 3 4" does not match any command
+
+The most similar commands are:
+  - add <a:int> <b:int>
+ > exit
+ >>> 
 ```
