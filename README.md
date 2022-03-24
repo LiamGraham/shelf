@@ -40,3 +40,11 @@ Parse commands using the `parse()` method to receive the corresponding output.
 >>> rect.height
 20
 ```
+
+Use `shelf()` to initiate a shell using a created CommandParser.
+
+```python
+>>> shelf(parser)
+> add 1 2
+3
+```
