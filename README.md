@@ -42,7 +42,7 @@ Parse commands using the `parse()` method to receive the corresponding output.
 20
 ```
 
-Use `shelf()` to initiate a shell using a created CommandParser. `shelf()` provides a basic set of shell functionality, including a customisable exit command and command suggestions.
+Use `shelf()` to initiate a shell using a created CommandParser. `shelf()` provides a basic set of shell functionality, including customisable exit and help commands and command suggestions.
 
 ```python
 >>> from shelf import shelf
