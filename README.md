@@ -25,6 +25,7 @@ Create a CommandParser and register each of your functions with a non-variable p
 (e.g. "add").
 
 ```python
+>>> from shelf import CommandParser
 >>> parser = CommandParser()
 >>> parser.add_command("add", add)
 >>> rect = Rectangle(5, 10)
@@ -44,6 +45,7 @@ Parse commands using the `parse()` method to receive the corresponding output.
 Use `shelf()` to initiate a shell using a created CommandParser.
 
 ```python
+>>> from shelf import shelf
 >>> shelf(parser)
 > add 1 2
 3
