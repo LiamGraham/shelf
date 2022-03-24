@@ -57,5 +57,11 @@ Unknown command: "ad 3 4" does not match any command
 
 The most similar commands are:
   - add <a:int> <b:int>
+> help
+Commands:
+
+  - add <a:int> <b:int>
+  - rect set <height:int> <width:int>
+
 > exit 
 ```
