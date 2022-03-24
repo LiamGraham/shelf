@@ -156,6 +156,10 @@ class CommandParser:
                 return command.parse(text)
         else:
             raise NoMatchingCommandError(f"\"{text}\" does not match any command")
+        
+    def help(self):
+        command_list = '\n'.join([f'  - {command.signature}' for command in self.commands])
+        return f"Commands:\n\n{command_list}"
     
     def get_close_commands(self, text: str, n: int = 3, cutoff: float = 0.3) -> Command:
         """Returns the `n` commands from the the list of registered commands which are
@@ -180,7 +184,7 @@ class CommandParser:
         matches = difflib.get_close_matches(simple_prefix, self.prefixes.keys(), n, cutoff)
         return [self.prefixes[prefix] for prefix in matches] 
 
-def shelf(parser: CommandParser, start_symbol: str = "> ", exit_command: str = "exit"):
+def shelf(parser: CommandParser, start_symbol: str = "> ", exit_command: str = "exit", help_command: str = "help"):
     """Initiates a shell using the given CommandParser. `start_symbol` is displayed before
     each new command ("> " by default). The shell can be exited by entering the given 
     `exit_command` ("exit" by default) or the ^C (KeyboardInterrupt) or ^D (EOF) 
@@ -199,6 +203,9 @@ def shelf(parser: CommandParser, start_symbol: str = "> ", exit_command: str = "
             break
 
         if command == "":
+            continue
+        if command == help_command:
+            print(parser.help(), "\n")
             continue
         if command == exit_command:
             break
