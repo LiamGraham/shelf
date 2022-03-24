@@ -57,6 +57,7 @@ Unknown command: "ad 3 4" does not match any command
 
 The most similar commands are:
   - add <a:int> <b:int>
+ 
 > help
 Commands:
 
